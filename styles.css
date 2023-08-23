@@ -1,0 +1,159 @@
+/* button {
+    position: absolute;
+    background-color: red;
+    height: 10px;
+    width: 10px;
+    border-radius: 20px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #eb7368;
+    border: 2px solid white;
+}
+*/
+
+:root {
+    --text-primary: #05386b;
+    --bg-primary: #5cdb95;
+    --bg-secondary: #379683;
+}
+
+body {
+    background-color: #5cdb95;
+    color: #05386b;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.20rem;
+}
+body::-webkit-scrollbar-track {
+    background: #05386b;
+}
+body::-webkit-scrollbar-thumb {
+    background: #edf5e1;
+    border-radius: 15px;
+}
+
+#container {
+    margin-left: 5rem;
+    margin: 0;
+}
+.h4s {
+    padding: 16px;
+    margin: 0;
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+}
+
+#psTXT  {
+    bottom: 15%;
+    font-size: 12px;
+}
+#titleH1 {
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+    font-family:'Bebas Neue', sans-serif;
+    font-size: 40px;
+}
+
+#interactiveMap {
+    margin: 0;
+    width: 784px;
+    height: 582px;
+    left: 50%;
+}
+#btnParent {
+    margin: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50vh;
+    width: 784px;
+    height: 582px;
+    background-color: red;
+}
+#arcDeTriumphDiv {
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 30.5%;
+    left: 29%;
+}
+#eiffelTowerDiv {
+    margin: 0;
+    width: 55px;
+    height: 69px;
+    position: fixed;
+    top: 40%;
+    left: 28.89%;
+}
+#catacombsDiv {
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 61%;
+    left: 46.5%;
+}
+.bottomBar {
+    margin: 0;
+
+}
+.sideBar {
+    margin: 0;
+}
+
+#navbar {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 200ms ease;
+}
+.nav-item {
+    list-style: none;
+    width: 100%;
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+}
+.nav-link {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    height: 5rem;
+    text-decoration: none;
+    list-style: none;
+    color: var(--text-primary);
+}
+.nav-item:last-child {
+    margin: auto;
+}
+
+#navbar:hover {
+    width: 16rem;
+}
+
+.nav-item:hover {
+    filter: grayscale(0%) opacity(1);
+    background-color: var(--bg-primary);
+    color: var(--bg-secondary);
+}
+
+@media only screen and (max-width: 600px) {
+
+}
+@media only screen and (min-width: 600px) {
+
+}
