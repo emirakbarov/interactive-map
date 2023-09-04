@@ -1,0 +1,132 @@
+
+@media only screen and (max-width:600px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    :root {
+        --text-primary: #05386b;
+        --bg-primary: #5cdb95;
+        --bg-secondary: #379683;
+        --white-primary: #edf5e1;
+    }
+
+    body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+    
+    body::-webkit-scrollbar {
+        width: 0.20rem;
+    }
+    body::-webkit-scrollbar-track {
+        background: var(--text-primary);
+    }
+    body::-webkit-scrollbar-thumb {
+        background: var(--white-primary);
+        border-radius: 15px;
+    }
+    
+    #needsMargin {
+        margin-bottom: 5rem;
+    }
+    .h4s {
+        padding: 16px;
+        text-align: center;
+        position: fixed;
+        bottom: 8%;
+        font-family: "Helvetica", sans-serif;
+    }
+    
+    #psTXT  {
+        bottom: 15%;
+        font-size: 12px;
+    }
+    #titleH1 {
+        padding: 30px;
+        text-align: center;
+        font-family:'Bebas Neue', sans-serif;
+        font-size: 40px;
+    }
+    #btnParent {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 784px;
+        height: 582px;
+        display: flex;
+    }
+    
+    #interactiveMap {
+        width: 784px;
+        height: 582px;
+        left: 50%;
+    }
+}
+
+@media only screen and (min-width:600px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    :root {
+        --text-primary: #05386b;
+        --bg-primary: #5cdb95;
+        --bg-secondary: #379683;
+        --white-primary: #edf5e1;
+    }
+    
+    body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+    
+    body::-webkit-scrollbar {
+        width: 0.20rem;
+    }
+    body::-webkit-scrollbar-track {
+        background: var(--text-primary);
+    }
+    body::-webkit-scrollbar-thumb {
+        background: var(--white-primary);
+        border-radius: 15px;
+    }
+    
+    #needsMargin {
+        margin-left: 5rem;
+    }
+    .h4s {
+        padding: 16px;
+        text-align: center;
+        position: fixed;
+        bottom: 8%;
+        font-family: "Helvetica", sans-serif;
+    }
+    
+    #psTXT  {
+        bottom: 15%;
+        font-size: 12px;
+    }
+    #titleH1 {
+        padding: 30px;
+        text-align: center;
+        font-family:'Bebas Neue', sans-serif;
+        font-size: 40px;
+    }
+    #btnParent {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 784px;
+        height: 582px;
+        display: flex;
+    }
+    
+    #interactiveMap {
+        width: 784px;
+        height: 582px;
+        left: 50%;
+    }
+}

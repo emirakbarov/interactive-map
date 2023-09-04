@@ -1,0 +1,137 @@
+
+
+@media only screen and (max-width: 600px) {
+
+    #navbar {
+        height: 5rem;
+        height: 100vh;
+        position: fixed;
+        background-color: var(--bg-secondary);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transition: width 200ms ease;
+        border-right: 4px solid var(--text-primary);
+    }
+    ul {
+        padding-top: 20px;
+        width: 100%;
+    }
+    .nav-item {
+        width: 100%;
+        list-style: none;
+        height: 3rem;
+        transition: all 0.3s ease;
+    }
+    .nav-link {
+        text-decoration: none;
+        list-style: none;
+        color: var(--text-primary);
+    }
+    .nav-item:last-child {
+        position: absolute;
+        bottom: 0px;
+        padding-bottom: 20px;
+    }
+    .nav-item:first-child {
+        padding-top: 20px;
+    }
+
+    #navbar:hover {
+        width: 16rem;
+    }
+
+    .nav-item:hover {
+        background-color: var(--bg-primary);
+        color: var(--bg-secondary);
+        .tooltipTXT {
+            opacity: 1;
+            transition: opacity 0.3s ease 1.5s;
+        }
+    }
+    .nav-item:not(:hover) .tooltipTXT{
+        opacity: 0;
+        transition: opacity 0.1s ease;
+    }
+
+    .tooltipTXT {
+        position: relative;
+        display: inline-block;
+        opacity: 0;
+        top: 15px;
+        left: -8px;
+        font-size: 0.7rem;
+        background-color: var(--white-primary);
+        border-radius: 15px;
+        padding: 3.5px;
+        border: 15px solid;
+        border-color: #000 #0000 #0000 #0000;
+    }
+}
+@media only screen and (min-width: 600px) {
+
+    #navbar {
+        height: 100%;
+        width: 5rem;
+        height: 100vh;
+        position: fixed;
+        background-color: var(--bg-secondary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: width 200ms ease;
+        border-right: 4px solid var(--text-primary);
+    }
+    ul {
+        padding-top: 20px;
+        width: 100%;
+    }
+    .nav-item {
+        width: 100%;
+        list-style: none;
+        height: 3rem;
+        transition: all 0.3s ease;
+    }
+    .nav-link {
+        text-decoration: none;
+        list-style: none;
+        color: var(--text-primary);
+    }
+    .nav-item:last-child {
+        position: absolute;
+        bottom: 0px;
+        padding-bottom: 20px;
+    }
+    .nav-item:first-child {
+        padding-top: 20px;
+    }
+
+    #navbar:hover {
+        width: 16rem;
+    }
+
+    .nav-item:hover {
+        background-color: var(--bg-primary);
+        color: var(--bg-secondary);
+        .tooltipTXT {
+            opacity: 1;
+            transition: opacity 0.3s ease 1.5s;
+        }
+    }
+    .nav-item:not(:hover) .tooltipTXT{
+        opacity: 0;
+        transition: opacity 0.1s ease;
+    }
+
+    .tooltipTXT {
+        position: relative;
+        display: inline-block;
+        opacity: 0;
+        top: 15px;
+        left: -8px;
+        font-size: 0.7rem;
+        background-color: var(--white-primary);
+        border-radius: 15px;
+        padding: 3.5px;
+    }
+}
