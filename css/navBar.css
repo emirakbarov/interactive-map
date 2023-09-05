@@ -142,6 +142,10 @@
         border-radius: 15px;
         padding: 3.5px;
     }
+    .tooltipTriangle {
+        background: var(--white-primary);
+    }
+
     .link-text {
         text-align: center;
     }
