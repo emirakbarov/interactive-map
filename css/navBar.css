@@ -1,6 +1,9 @@
-
-
 @media only screen and (max-width: 600px) {
+
+    img {
+        border: 3px solid #303134;
+        box-shadow: 5px ;
+    }
 
     #navbar {
         height: 5rem;
@@ -70,6 +73,11 @@
 }
 @media only screen and (min-width: 600px) {
 
+    img {
+        border: 3px solid #303134;
+        box-shadow: 5px 5px #bdc1c6;
+    }
+
     #navbar {
         height: 100%;
         width: 5rem;
@@ -133,5 +141,8 @@
         background-color: var(--white-primary);
         border-radius: 15px;
         padding: 3.5px;
+    }
+    .link-text {
+        text-align: center;
     }
 }
