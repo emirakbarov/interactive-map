@@ -1,10 +1,5 @@
 @media only screen and (max-width: 600px) {
 
-    img {
-        border: 3px solid #303134;
-        box-shadow: 5px ;
-    }
-
     #navbar {
         height: 5rem;
         height: 100vh;
@@ -73,11 +68,6 @@
 }
 @media only screen and (min-width: 600px) {
 
-    img {
-        border: 3px solid #303134;
-        box-shadow: 5px 5px #bdc1c6;
-    }
-
     #navbar {
         height: 100%;
         width: 5rem;
@@ -86,29 +76,31 @@
         background-color: var(--bg-secondary);
         display: flex;
         flex-direction: column;
+        row-gap: 80px;
         align-items: center;
+        justify-content: flex-start;
         transition: width 200ms ease;
         border-right: 4px solid var(--text-primary);
+        z-index: 3;
     }
     ul {
-        padding-top: 20px;
         width: 100%;
+        height: 100%;
     }
     .nav-item {
-        width: 100%;
         list-style: none;
         height: 3rem;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
+        text-align: center;
     }
     .nav-link {
         text-decoration: none;
-        list-style: none;
         color: var(--text-primary);
     }
+    .link-text {
+        
+    }
     .nav-item:last-child {
-        position: absolute;
-        bottom: 0px;
-        padding-bottom: 20px;
     }
     .nav-item:first-child {
         padding-top: 20px;
@@ -120,21 +112,20 @@
 
     .nav-item:hover {
         background-color: var(--bg-primary);
-        color: var(--bg-secondary);
         .tooltipTXT {
             opacity: 1;
             transition: opacity 0.3s ease 1.5s;
         }
     }
     .nav-item:not(:hover) .tooltipTXT{
-        opacity: 0;
+        opacity: 1;
         transition: opacity 0.1s ease;
     }
 
     .tooltipTXT {
         position: relative;
         display: inline-block;
-        opacity: 0;
+        opacity: 1;
         top: 15px;
         left: -8px;
         font-size: 0.7rem;
@@ -142,13 +133,9 @@
         border-radius: 15px;
         padding: 3.5px;
     }
-    .tooltipTriangle {
-        background: var(--white-primary);
-        width: 20px;
-        height: 20px;        
-    }
-
-    .link-text {
-        text-align: center;
+    .tooltipTXT::after {
+        content: '';
+        border: 8px solid transparent;
+        border-top-color: black;
     }
 }

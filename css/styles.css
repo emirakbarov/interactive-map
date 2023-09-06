@@ -32,16 +32,8 @@
         margin-bottom: 5rem;
     }
     .h4s {
-        padding: 16px;
         text-align: center;
-        position: fixed;
-        bottom: 8%;
         font-family: "Helvetica", sans-serif;
-    }
-    
-    #psTXT  {
-        bottom: 15%;
-        font-size: 12px;
     }
     #titleH1 {
         padding: 30px;
@@ -76,6 +68,8 @@
         --bg-primary: #5cdb95;
         --bg-secondary: #379683;
         --white-primary: #edf5e1;
+        --border-primary: #b1b2b4;
+        --shadow-primary: #87898b;
     }
     
     body {
@@ -97,18 +91,19 @@
     #needsMargin {
         margin-left: 5rem;
     }
+
     .h4s {
-        padding: 16px;
         text-align: center;
-        position: fixed;
-        bottom: 8%;
         font-family: "Helvetica", sans-serif;
     }
-    
-    #psTXT  {
-        bottom: 15%;
-        font-size: 12px;
+    #instructionalText {
+        margin-top: 3rem;
     }
+    #afterWordText {
+        margin-top: 2rem;
+        font-size: 0.75rem;
+    }
+
     #titleH1 {
         padding: 30px;
         text-align: center;
@@ -124,9 +119,16 @@
         display: flex;
     }
     
+    img {
+        border: 0.35rem solid var(--border-primary);
+        box-shadow: 5px 5px 5px var(--shadow-primary);
+        z-index: 1;
+    }
+    
     #interactiveMap {
         width: 784px;
         height: 582px;
         left: 50%;
+        z-index: 1;
     }
 }

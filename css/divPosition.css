@@ -4,6 +4,7 @@
     position: absolute;
     top: 28%;
     left: 24%;
+    z-index: 2;
 }
 #eiffelTowerDiv {
     width: 55px;
@@ -11,6 +12,7 @@
     position: absolute;
     top: 43.3%;
     left: 23.83%;
+    z-index: 2;
 }
 #catacombsDiv {
     width: 50px;
@@ -18,4 +20,26 @@
     position: absolute;
     top: 78%;
     left: 45.5%;
+    z-index: 3;
+}
+#placeLaConcordeDiv {
+
+}
+#moulinRougeDiv {
+    
+}
+#sacreCoeurDiv {
+    
+}
+#operaGarnierDiv {
+    
+}
+#palaisRoyalDiv {
+    
+}
+#orangerieDiv {
+    
+}
+#hotelDesInvalidsDiv {
+    
 }
