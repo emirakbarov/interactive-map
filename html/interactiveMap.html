@@ -10,35 +10,34 @@
     <link rel="stylesheet" href="/interactive-map/css/styles.css">
 </head>
 <body>
+    <div id="loginPrompt">
+        <h3>To get started with the interactive map, please log in.</h3>
+        <form>
+            <input type="text" placeholder="your email..."><br>
+            <input type="password"> <br>
+            <input type="submit">
+        </form>
+    </div>
     <nav id="navbar" class="sideBar">
         <ul>
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <span class="link-text">
-                        Home
-                        <span class="tooltipTXT">Takes you to the home page</span>
-                    </span>
+                <a href="#" class="nav-link">Home
+                    <span class="tooltipTXT">Takes you to the home page</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <span class="link-text">Map
-                        <span class="tooltipTXT">Takes you to the interactive map</span>
-                    </span>
+                <a href="#" class="nav-link">Map
+                    <span class="tooltipTXT">Takes you to the interactive map</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <span class="link-text">To Do
-                        <span class="tooltipTXT">Takes you to a selection of restaurants</span>
-                    </span>
+                <a href="#" class="nav-link">To Do
+                    <span class="tooltipTXT">Takes you to a selection of restaurants</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <span class="link-text">Contact
-                        <span class="tooltipTXT">Get in contact with us!</span>
-                    </span>
+                <a href="#" class="nav-link">Contact
+                    <span class="tooltipTXT">Get in contact with us!</span>
                 </a>
             </li>
         </ul>
@@ -47,18 +46,36 @@
         <h1 id="titleH1">Parisian Interactive Map</h1>
         <div id="btnParent">
             <img id="interactiveMap" src="/interactive-map/images/parismap.jpg" alt="interactive map of Paris">
-            <a href="https://www.toureiffel.paris/en" target="_blank">
-                <div id="eiffelTowerDiv"></div>
-            </a>
-            <a href="https://www.toureiffel.paris/en" target="_blank">
-                <div id="arcDeTriumphDiv"></div>
-            </a>
-            <a href="https://www.catacombes.paris.fr/en" target="_blank">
-                <div id="catacombsDiv"></div>
-            </a>
-            <a href="https://www.parismarais.com/en/discover-the-marais/the-marais-neighborhoods/place-des-vosges.html" target="_blank">
-                
-            </a>
+                <div class="divs" id="eiffelTowerDiv">
+                    <div class="divToolTip">
+                        <a class="links" href="https://www.google.com/maps/dir/51.4800076,-0.219963/Eiffel+Tower,+Champ+de+Mars,+5+Av.+Anatole+France,+75007+Paris,+France/@50.16296,-1.175451,7z/data=!3m1!4b1!4m13!1m2!2m1!1seiffel+tower!4m9!1m1!4e1!1m5!1m1!1s0x47e66e2964e34e2d:0x8ddca9ee380ef7e0!2m2!1d2.2944813!2d48.8583701!3e3?entry=ttu" target="_blank">
+                            <button class="divBTN">Route</button>
+                        </a>
+                        <a href="https://www.toureiffel.paris/en" target="_blank">
+                            <button class="divBTN">Website</button>
+                        </a>
+                    </div>
+                </div>
+            <div class="divs" id="arcDeTriumphDiv">
+                <div class="divToolTip">
+                    <a href="https://www.google.com/maps/dir/51.4800076,-0.219963/Arc+de+Triomphe,+Place+Charles+de+Gaulle,+Paris,+France/@50.16296,-1.175451,7z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x47e66fec70fb1d8f:0xd9b5676e112e643d!2m2!1d2.2950275!2d48.8737917!3e3?entry=ttu" target="_blank">
+                        <button class="divBTN">Route</button>
+                    </a>
+                    <a href="https://www.toureiffel.paris/en" target="_blank">
+                        <button class="divBTN">Website</button>
+                    </a>
+                </div>
+            </div>
+            <div class="divs" id="catacombsDiv">
+                <div class="divToolTip">
+                    <a href="https://www.google.com/maps/dir/51.4800076,-0.219963/Les+Catacombes+de+Paris,+Avenue+du+Colonel+Henri+Rol-Tanguy,+Paris,+France/@50.16296,-1.175451,7z/data=!4m10!4m9!1m1!4e1!1m5!1m1!1s0x47e671b6c1d0b675:0xc8d7f073e62eb4b3!2m2!1d2.332391!2d48.8339179!3e3?entry=ttu" target="_blank">
+                        <button class="divBTN">Route</button>
+                    </a>
+                    <a href="https://www.catacombes.paris.fr/en" target="_blank">
+                        <button class="divBTN">Website</button>
+                    </a>
+                </div>
+            </div>
         </div>
     <h4 id="instructionalText" class="h4s"> Hover over a monument for directions or the website!</h4>
         <h4 id="afterWordText" class="h4s">(While not necessary, we recommend using this feature in a full-size window for best experience).</h4>

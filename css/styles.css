@@ -131,4 +131,12 @@
         left: 50%;
         z-index: 1;
     }
+    #loginPrompt {
+        width: 500px;
+        height: 500px;
+        position: fixed;
+        display: none;
+        background-color: lightgrey;
+        z-index: 7;
+    }
 }

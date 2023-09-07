@@ -43,3 +43,47 @@
 #hotelDesInvalidsDiv {
     
 }
+
+.divToolTip {
+    background-color: rgb(148, 142, 142);
+    box-shadow: 5px 5px 5px rgb(100, 97, 97);
+    width: 7rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    left: -50%;
+    top: -10%;
+    opacity: 0;
+}
+.divs:not(:hover) .divToolTip{
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+.divs:hover .divToolTip{
+    opacity: 1;
+    transition: opacity 0.3s ease 1.2s;
+}
+
+.divToolTip::before {
+    content: '';
+    border: 10px solid transparent;
+    border-top-color: rgb(148, 142, 142);
+    position: absolute;
+    right: calc(50% + width);
+    top: 100%;
+}
+.divBTN {
+    background-color: rgb(148, 142, 142);
+    border: 1px solid rgb(207, 194, 194);
+    color: white;
+    box-sizing: border-box;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin: auto;
+}
+.divBTN:hover {
+    background-color: rgb(207, 194, 194);
+    color: black;
+}
