@@ -64,16 +64,17 @@
     }
     
     :root {
+        font-size: 16px;
         --text-primary: #05386b;
-        --bg-primary: #5cdb95;
-        --bg-secondary: #379683;
+        --bg-primary: #ffffff;
+        --bg-secondary: #cf142b;
         --white-primary: #edf5e1;
         --border-primary: #b1b2b4;
         --shadow-primary: #87898b;
     }
     
     body {
-        background-color: var(--bg-primary);
+        background: linear-gradient(to right,var(--text-primary), var(--bg-primary), var(--bg-secondary)) no-repeat fixed;
         color: var(--text-primary);
     }
     
@@ -81,11 +82,12 @@
         width: 0.20rem;
     }
     body::-webkit-scrollbar-track {
-        background: var(--text-primary);
+        background: var(--bg-primary);
     }
     body::-webkit-scrollbar-thumb {
-        background: var(--white-primary);
+        background: var(--bg-secondary);
         border-radius: 15px;
+        border: 2px solid var(--text-primary);
     }
     
     #needsMargin {
@@ -94,7 +96,7 @@
 
     .h4s {
         text-align: center;
-        font-family: "Helvetica", sans-serif;
+        font-family: 'Parisine Office Web', sans-serif;
     }
     #instructionalText {
         margin-top: 3rem;
@@ -107,7 +109,7 @@
     #titleH1 {
         padding: 30px;
         text-align: center;
-        font-family:'Bebas Neue', sans-serif;
+        font-family:'EB Garamond', sans-serif;
         font-size: 40px;
     }
     #btnParent {

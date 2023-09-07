@@ -37,6 +37,9 @@
 
     #navbar:hover {
         width: 16rem;
+        .link-text {
+            display: block;
+        }
     }
 
     .nav-item:hover {
@@ -73,64 +76,70 @@
         width: 5rem;
         height: 100vh;
         position: fixed;
-        background-color: var(--bg-secondary);
-        display: flex;
-        flex-direction: column;
-        row-gap: 80px;
-        align-items: center;
-        justify-content: flex-start;
-        transition: width 200ms ease;
+        background-color:var(--bg-secondary);
         border-right: 4px solid var(--text-primary);
         z-index: 3;
     }
-    ul {
-        display: inline-block;
-        width: 100%;
-        height: 100%;
+    #navbar-nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
     }
     .nav-item {
-        
         width: 100%;
-        list-style: none;
         height: 3rem;
-        transition: all 0.2s ease;
     }
     .nav-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         text-decoration: none;
         color: var(--text-primary);
-        text-align: center;
-        vertical-align: center;  
+    }
+    .link-text {
+        display: none;
+        padding-left: 1rem;
+    }
+
+    .nav-item:first-child {
     }
     .nav-item:last-child {
-    }
-    .nav-item:first-child {
-        padding-top: 20px;
     }
 
     #navbar:hover {
         width: 16rem;
+        .link-text {
+            display: block;
+        }
     }
 
     .nav-item:hover {
-        background-color: var(--bg-primary);
+        background-color:var(--bg-primary);
         .tooltipTXT {
+            display: none;
             opacity: 1;
-            transition: opacity 0.3s ease 1.5s;
+            transition: all 0.3s ease 1.5s;
         }
     }
     .nav-item:not(:hover) .tooltipTXT{
+        display: none;
         opacity: 0;
-        transition: opacity 0.1s ease;
+        transition: all 0.1s ease;
     }
 
     .tooltipTXT {
+        color: var(--bg-primary);
         text-align: center;
         vertical-align: center;
         position: relative;
         left: 12px;
+        display: none;
         opacity: 0;
         font-size: 0.7rem;
-        background-color: var(--white-primary);
+        background-color: var(--bg-secondary);
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
         padding: 3.5px;
@@ -139,7 +148,7 @@
     .tooltipTXT::before {
         content: '';
         border: 10px solid transparent;
-        border-right-color: var(--white-primary);
+        border-right-color: var(--bg-secondary);
         position: absolute;
         right: 100%;
         top: 0%;
