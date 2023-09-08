@@ -23,25 +23,100 @@
     z-index: 3;
 }
 #placeLaConcordeDiv {
-
+    width: 50px;
+    height: 52px;
+    position: absolute;
+    top: 35%;
+    left: 38%;
+    z-index: 3;
 }
 #moulinRougeDiv {
-    
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 20%;
+    left: 45.5%;
+    z-index: 3;
 }
 #sacreCoeurDiv {
-    
+    width: 55px;
+    height: 50px;
+    position: absolute;
+    top: 12%;
+    left: 53%;
+    z-index: 3;
 }
 #operaGarnierDiv {
-    
+    width: 55px;
+    height: 50px;
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    z-index: 3;
 }
 #palaisRoyalDiv {
-    
+    width: 65px;
+    height: 50px;
+    position: absolute;
+    top: 40%;
+    left: 51%;
+    z-index: 3;
 }
 #orangerieDiv {
-    
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 43.5%;
+    left: 43.5%;
+    z-index: 3;
 }
-#hotelDesInvalidsDiv {
-    
+#hotelDesInvalidesDiv {
+    width: 55px;
+    height: 63px;
+    position: absolute;
+    top: 44%;
+    left: 33%;
+    z-index: 2;
+}
+#montparnasseTowerDiv {
+    width: 55px;
+    height: 72px;
+    position: absolute;
+    top: 62%;
+    left: 40%;
+    z-index: 2;
+}
+#sainteChapelleDiv {
+    width: 55px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+}
+#notreDameDiv {
+    width: 40px;
+    height: 50px;
+    position: absolute;
+    top: 53%;
+    left: 58%;
+    z-index: 2;
+}
+#placeDesVosgesDiv {
+    width: 70px;
+    height: 45px;
+    position: absolute;
+    top: 51%;
+    left: 64%;
+    z-index: 2;
+}
+#pantheonDiv {
+    width: 50px;
+    height: 60px;
+    position: absolute;
+    top: 63%;
+    left: 55%;
+    z-index: 2;
 }
 
 .divToolTip {

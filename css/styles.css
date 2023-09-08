@@ -71,6 +71,8 @@
         --white-primary: #edf5e1;
         --border-primary: #b1b2b4;
         --shadow-primary: #87898b;
+        --border-hover: rgb(148, 142, 142);
+        --shadow-hover: rgb(102, 98, 98);
     }
     
     body {
@@ -119,11 +121,11 @@
         width: 784px;
         height: 582px;
         display: flex;
+        border: 0.35rem solid var(--border-primary);
+        box-shadow: 8px 8px 8px var(--shadow-primary);
     }
     
     img {
-        border: 0.35rem solid var(--border-primary);
-        box-shadow: 5px 5px 5px var(--shadow-primary);
         z-index: 1;
     }
     
@@ -132,6 +134,10 @@
         height: 582px;
         left: 50%;
         z-index: 1;
+    }
+    #btnParent:hover {
+        border: 0.35rem solid var(--border-hover);
+        box-shadow: 8px 8px 8px var(--shadow-hover);
     }
     #loginPrompt {
         width: 500px;
