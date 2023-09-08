@@ -45,16 +45,16 @@
 
 .nav-item:hover {
     background-color:var(--bg-primary);
-    .tooltipTXT {
-        display: block;
-        opacity: 1;
-        transition: opacity 0.3s ease 1.5s;
-    }
 }
 .nav-item:not(:hover) .tooltipTXT{
     display: none;
     opacity: 0;
     transition: all 0.1s ease;
+}
+.nav-item:hover .tooltipTXT {
+    display: inline;
+    opacity: 1;
+    transition: opacity 0.3s ease 1.5s;
 }
 
 .logo {
@@ -81,6 +81,7 @@
     text-align: center;
     vertical-align: center;
     position: relative;
+    height: 1.5rem;
     left: 12px;
     display: none;
     opacity: 0;
