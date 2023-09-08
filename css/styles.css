@@ -1,150 +1,94 @@
-
-@media only screen and (max-width:600px) {
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    
-    :root {
-        --text-primary: #05386b;
-        --bg-primary: #5cdb95;
-        --bg-secondary: #379683;
-        --white-primary: #edf5e1;
-    }
-
-    body {
-        background-color: var(--bg-primary);
-        color: var(--text-primary);
-    }
-    
-    body::-webkit-scrollbar {
-        width: 0.20rem;
-    }
-    body::-webkit-scrollbar-track {
-        background: var(--text-primary);
-    }
-    body::-webkit-scrollbar-thumb {
-        background: var(--white-primary);
-        border-radius: 15px;
-    }
-    
-    #needsMargin {
-        margin-bottom: 5rem;
-    }
-    .h4s {
-        text-align: center;
-        font-family: "Helvetica", sans-serif;
-    }
-    #titleH1 {
-        padding: 30px;
-        text-align: center;
-        font-family:'Bebas Neue', sans-serif;
-        font-size: 40px;
-    }
-    #btnParent {
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        width: 784px;
-        height: 582px;
-        display: flex;
-    }
-    
-    #interactiveMap {
-        width: 784px;
-        height: 582px;
-        left: 50%;
-    }
+* {
+    margin: 0;
+    padding: 0;
 }
 
-@media only screen and (min-width:600px) {
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    
-    :root {
-        font-size: 16px;
-        --text-primary: #05386b;
-        --bg-primary: #ffffff;
-        --bg-secondary: #cf142b;
-        --white-primary: #edf5e1;
-        --border-primary: #b1b2b4;
-        --shadow-primary: #87898b;
-        --border-hover: rgb(148, 142, 142);
-        --shadow-hover: rgb(102, 98, 98);
-    }
-    
-    body {
-        background: linear-gradient(to right,var(--text-primary), var(--bg-primary), var(--bg-secondary)) no-repeat fixed;
-        color: var(--text-primary);
-    }
-    
-    body::-webkit-scrollbar {
-        width: 0.20rem;
-    }
-    body::-webkit-scrollbar-track {
-        background: var(--bg-primary);
-    }
-    body::-webkit-scrollbar-thumb {
-        background: var(--bg-secondary);
-        border-radius: 15px;
-        border: 2px solid var(--text-primary);
-    }
-    
+:root {
+    font-size: 16px;
+    --text-primary: #05386b;
+    --bg-primary: #ffffff;
+    --bg-secondary: #cf142b;
+    --white-primary: #edf5e1;
+    --border-primary: #b1b2b4;
+    --shadow-primary: #87898b;
+    --border-hover: rgb(148, 142, 142);
+    --shadow-hover: rgb(102, 98, 98);
+}
+
+body {
+    background: linear-gradient(to right,var(--text-primary), var(--bg-primary), var(--bg-secondary)) no-repeat fixed;
+    color: var(--text-primary);
+}
+
+body::-webkit-scrollbar {
+    width: 0.20rem;
+}
+body::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+body::-webkit-scrollbar-thumb {
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    border: 2px solid var(--text-primary);
+}
+
+#needsMargin {
+    margin-bottom: 5rem;
+}
+
+.h4s {
+    text-align: center;
+    font-family: 'Parisine Office Web', sans-serif;
+}
+#instructionalText {
+    margin-top: 3rem;
+}
+#afterWordText {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+}
+
+#titleH1 {
+    padding: 30px;
+    text-align: center;
+    font-family:'EB Garamond', sans-serif;
+    font-size: 40px;
+}
+#btnParent {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 784px;
+    height: 582px;
+    display: flex;
+    border: 0.35rem solid var(--border-primary);
+    box-shadow: 8px 8px 8px var(--shadow-primary);
+}
+
+img {
+    z-index: 1;
+}
+
+#interactiveMap {
+    width: 784px;
+    height: 582px;
+    left: 50%;
+    z-index: 1;
+}
+#btnParent:hover {
+    border: 0.35rem solid var(--border-hover);
+    box-shadow: 8px 8px 8px var(--shadow-hover);
+}
+#loginPrompt {
+    width: 500px;
+    height: 500px;
+    position: fixed;
+    display: none;
+    background-color: lightgrey;
+    z-index: 7;
+}
+@media only screen and (max-width:600px) {
     #needsMargin {
-        margin-left: 5rem;
-    }
-
-    .h4s {
-        text-align: center;
-        font-family: 'Parisine Office Web', sans-serif;
-    }
-    #instructionalText {
-        margin-top: 3rem;
-    }
-    #afterWordText {
-        margin-top: 2rem;
-        font-size: 0.75rem;
-    }
-
-    #titleH1 {
-        padding: 30px;
-        text-align: center;
-        font-family:'EB Garamond', sans-serif;
-        font-size: 40px;
-    }
-    #btnParent {
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        width: 784px;
-        height: 582px;
-        display: flex;
-        border: 0.35rem solid var(--border-primary);
-        box-shadow: 8px 8px 8px var(--shadow-primary);
-    }
-    
-    img {
-        z-index: 1;
-    }
-    
-    #interactiveMap {
-        width: 784px;
-        height: 582px;
-        left: 50%;
-        z-index: 1;
-    }
-    #btnParent:hover {
-        border: 0.35rem solid var(--border-hover);
-        box-shadow: 8px 8px 8px var(--shadow-hover);
-    }
-    #loginPrompt {
-        width: 500px;
-        height: 500px;
-        position: fixed;
-        display: none;
-        background-color: lightgrey;
-        z-index: 7;
+        margin: 0;
     }
 }
