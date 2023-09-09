@@ -11,13 +11,18 @@
     <link rel="stylesheet" href="/interactive-map/css/styles.css">
 </head>
 <body>
-    <div id="loginPrompt">
-        <h3>To get started with the interactive map, please log in.</h3>
-        <form>
-            <input type="text" placeholder="your email..."><br>
-            <input type="password"> <br>
-            <input type="submit">
-        </form>
+    <div id="disableOtherElements">
+        <div id="loginPrompt">
+            <h3>To get started with the interactive map, please log in.</h3>
+            <form>
+                <label><span>Enter your email:</span></label> 
+                <input type="email" id="email"> <br>
+                <label><span>Enter your password:</span></label>
+                <input type="password" id="password"> <br>
+                <input type="submit">
+                <button>Register</button>
+            </form>
+        </div>
     </div>
     <nav id="navbar" class="sideBar">
         <ul id="navbar-nav">
@@ -234,5 +239,6 @@
     <h4 id="instructionalText" class="h4s"> Hover over a monument for directions or the website!</h4>
         <h4 id="afterWordText" class="h4s">(While not necessary, we recommend using this feature in a full-size window for best experience).</h4>
     </div>
+    <script src="/interactive-map/script.js"></script>
 </body>
 </html>

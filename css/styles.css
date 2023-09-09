@@ -80,14 +80,68 @@ img {
     border: 0.35rem solid var(--border-hover);
     box-shadow: 8px 8px 8px var(--shadow-hover);
 }
+#disableOtherElements {
+    position: absolute;
+    width: 100vh;
+    height: 100vw;
+    z-index: 9;
+    min-width: 100%;
+    min-height: 100%;
+}
 #loginPrompt {
     width: 500px;
-    height: 500px;
+    height: 400px;
     position: fixed;
-    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: lightgrey;
-    z-index: 7;
+    z-index: 10;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+#loginPrompt > h3 {
+    text-align: center;
+    font-family: 'EB Garamond';
+    color: var(--text-primary);
+    font-size: 30px;
+    margin-top: 2rem;
+}
+#loginPrompt > form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#loginPrompt > form > input {
+    width: 90%;
+    height: 3rem;
+}
+#loginPrompt > form > input[type=submit] {
+    width: 40%;
+    height: 2rem;
+}
+#loginPrompt > form > button {
+    width: 15%;
+    height: 1.5rem;
+    position: absolute;
+    left: 81%;
+    top: 90%;
+}
+
+#loginPrompt > form > label {
+    font-family: 'Parisine Office Web';
+    font-size: 20px;
+    margin-bottom: 7px;
+    width: 90%;
+}
+
 @media only screen and (max-width:600px) {
     #needsMargin {
         margin: 0;
