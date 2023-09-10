@@ -87,6 +87,7 @@ img {
     z-index: 9;
     min-width: 100%;
     min-height: 100%;
+    display: block;
 }
 #loginPrompt {
     width: 500px;
@@ -99,7 +100,7 @@ img {
     z-index: 10;
     margin: auto;
     padding: 0;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
 }
@@ -147,6 +148,59 @@ img {
     font-size: 20px;
     margin-bottom: 7px;
     width: 90%;
+}
+
+#screenTooSmallPrompt {
+    width: 500px;
+    height: 400px;
+    background-color: lightgrey;
+    display: inline-block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding: 0;
+}
+#screenTooSmallPrompt > div {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#screenTooSmallPrompt > div > button {
+    margin: 15px;
+    margin-right: 0;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    font-family: 'Parisine Office Web';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#screenTooSmallPrompt h2 {
+    text-align: center;
+    font-size: 2rem;
+    width: 2rem;
+    font-family: 'Parisine Office Web';
+    right: 50%;
+    margin-right: 15px;
+    padding: 0;
+    transform: translateX();
+}
+#screenTooSmallPrompt > div > button > svg {
+    width: 20px;
+    height: 20px;
+}
+#screenTooSmallPrompt > div > button:hover {
+    background-color: var(--bg-primary);
 }
 
 @media only screen and (max-width:600px) {

@@ -25,9 +25,12 @@
     text-decoration: none;
     color: var(--text-primary);
 }
+
 .link-text {
     display: none;
     margin-left: 1rem;
+    font-family: 'Parisine Office Web';
+    font-size: 1.1rem;
 }
 
 .nav-link svg {
@@ -44,17 +47,15 @@
 }
 
 .nav-item:hover {
-    background-color:var(--bg-primary);
+    background-color: var(--bg-primary);
+    transition: background-color 0.1s ease;
+    .nav-link svg {
+        fill: var(--bg-secondary);
+    }
 }
-.nav-item:not(:hover) .tooltipTXT{
-    display: none;
-    opacity: 0;
-    transition: all 0.1s ease;
-}
-.nav-item:hover .tooltipTXT {
-    display: inline;
-    opacity: 1;
-    transition: opacity 0.3s ease 1.5s;
+.nav-item:not(:hover) {
+    background-color: none;
+    transition: background-color 0.1s ease;
 }
 
 .logo {
@@ -73,34 +74,12 @@
     transition: transform 0.3s;
 }
 #navbar:hover .logo svg {
-    transform: rotate(450deg);
+    transform: rotate(90deg);
 }
-
-.tooltipTXT {
-    color: var(--bg-primary);
-    text-align: center;
-    vertical-align: center;
-    position: relative;
-    height: 1.5rem;
-    left: 12px;
+.logo-text {
     display: none;
-    opacity: 0;
-    font-size: 0.7rem;
-    background-color: var(--bg-secondary);
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding: 3.5px;
-    height: 100%;
+    margin-left: 1rem;
 }
-.tooltipTXT::before {
-    content: '';
-    border: 10px solid transparent;
-    border-right-color: var(--bg-secondary);
-    position: absolute;
-    right: 100%;
-    top: 0%;
-}
-
 
 /* small screens */
 @media only screen and (max-width: 600px) {
@@ -118,6 +97,10 @@
     .nav-link {
         justify-content: center;
     }
+    .nav-link:focus {
+        background-color: var(--bg-primary);
+    }
+
 }
 /* large screen */
 @media only screen and (min-width: 600px) {
@@ -128,7 +111,7 @@
     }    
     #navbar:hover {
         width: 16rem;
-        .link-text {
+        .link-text, .logo-text {
             display: inline;
         }
     }
