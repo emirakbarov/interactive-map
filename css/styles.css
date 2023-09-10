@@ -122,10 +122,17 @@ img {
 #loginPrompt > form > input {
     width: 90%;
     height: 3rem;
+    font-size: 1.8rem;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-family: 'Parisine Office Web';
+    vertical-align: center;
 }
 #loginPrompt > form > input[type=submit] {
+    padding: 0;
     width: 40%;
     height: 2rem;
+    font-size: 1rem;
 }
 #loginPrompt > form > button {
     width: 15%;
