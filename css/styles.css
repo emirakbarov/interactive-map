@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@700&family=Poppins:wght@300&family=Rosario&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Passion+One:wght@700&family=Poppins:wght@300&family=Rosario&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +10,7 @@
 :root {
     font-size: 16px;
     --text-primary: #05386b;
+    --black: #000000;
     --bg-primary: #ffffff;
     --bg-secondary: #cf142b;
     --white-primary: #edf5e1;
@@ -13,11 +18,13 @@
     --shadow-primary: #87898b;
     --border-hover: rgb(148, 142, 142);
     --shadow-hover: rgb(102, 98, 98);
+    --font-primary: 'Graduate', serif;
+    --font-secondary: 'Rosario', sans-serif;
 }
 
 body {
     background: linear-gradient(to right,var(--text-primary), var(--bg-primary), var(--bg-secondary)) no-repeat fixed;
-    color: var(--text-primary);
+    color: var(--black);
 }
 
 body::-webkit-scrollbar {
@@ -39,7 +46,7 @@ body::-webkit-scrollbar-thumb {
 
 .h4s {
     text-align: center;
-    font-family: 'Parisine Office Web', sans-serif;
+    font-family: var(--font-secondary), sans-serif;
 }
 #instructionalText {
     margin-top: 3rem;
@@ -52,8 +59,12 @@ body::-webkit-scrollbar-thumb {
 #titleH1 {
     padding: 30px;
     text-align: center;
-    font-family:'EB Garamond', sans-serif;
+    font-family:var(--font-primary), sans-serif;
     font-size: 40px;
+}
+#parisInfoSection1, #parisInfoSection2 {
+    font-family: var(--font-secondary);
+    font-size: 1.2rem;
 }
 #btnParent {
     position: relative;
@@ -106,8 +117,8 @@ img {
 }
 #loginPrompt > h3 {
     text-align: center;
-    font-family: 'EB Garamond';
-    color: var(--text-primary);
+    font-family: var(--font-primary);
+    color: var(--black);
     font-size: 30px;
     margin-top: 2rem;
 }
@@ -126,7 +137,7 @@ img {
     font-size: 1.8rem;
     box-sizing: border-box;
     padding-left: 10px;
-    font-family: 'Parisine Office Web';
+    font-family: var(--font-secondary);
     vertical-align: center;
 }
 #loginPrompt > form > input[type=submit] {
@@ -144,7 +155,7 @@ img {
 }
 
 #loginPrompt > form > label {
-    font-family: 'Parisine Office Web';
+    font-family: var(--font-secondary);
     font-size: 20px;
     margin-bottom: 7px;
     width: 90%;
@@ -181,14 +192,14 @@ img {
     border: none;
     background-color: transparent;
     font-weight: bold;
-    font-family: 'Parisine Office Web';
+    font-family: var(--font-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 #screenTooSmallPrompt h2 {
     font-size: 3rem;
-    font-family: 'Parisine Office Web';
+    font-family: var(--font-secondary);
     padding: 0;
     margin: 0;
     flex: 0.8;
@@ -205,7 +216,7 @@ img {
 
 #screenTooSmallPrompt h3 {
     font-size: 1.5rem;
-    font-family: 'Parisine Office Web';
+    font-family: var(--font-secondary);
     flex: auto;
     margin-left: 10%;
     margin-right: 10%;

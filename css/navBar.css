@@ -29,12 +29,13 @@
 .link-text {
     display: none;
     margin-left: 1rem;
-    font-family: 'Parisine Office Web';
+    font-family: var(--font-secondary);
     font-size: 1.1rem;
 }
 
 .nav-link svg {
-    min-width: 2rem;
+    max-width: 2rem;
+    width: 2rem;
     margin: 0 1.5rem;
     fill: var(--text-primary);
 }
@@ -68,17 +69,19 @@
     font-size: 1.5rem;
     letter-spacing: 0.3ch;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .logo svg {
     transform: rotate(0deg);
     transition: transform 0.3s;
 }
-#navbar:hover .logo svg {
-    transform: rotate(90deg);
-}
 .logo-text {
     display: none;
-    margin-left: 1rem;
+    margin-left: 0.7rem;
+    font-size: 2rem;
+    font-family: var(--font-secondary);
 }
 
 /* small screens */
@@ -113,6 +116,12 @@
         width: 16rem;
         .link-text, .logo-text {
             display: inline;
+        }
+        .logo-image {
+            display: none;
+        }
+        .logo-text {
+
         }
     }
 }
