@@ -2,21 +2,14 @@
 #backButton {
     -webkit-transform: scaleX(-1); 
     transform: scaleX(-1);
-    left: 1%;
 }
-#nextButton {
-    left: 93%;
-}
+
 .activityBTN {
-    margin: 0;
-    padding: 0;
     background-color: transparent;
     outline: none;
     border: none;
     cursor: pointer;
-    position: absolute;
     z-index: 2;
-    top: 90%;
 }
 .activityBTN > svg {
     height: 4rem;
