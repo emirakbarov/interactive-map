@@ -199,16 +199,16 @@ backBTN.addEventListener('click', () => {
         updateSlideContent(currentSlideID);
         switch (slideOn) {
             case "slide1":
-                slide1.style.animation = "slideOutRight 0.9s ease-in 0s 1";
+                slide1.style.animation = "slideOutRight 0.9s ease-out 0s 1";
                 slide2.style.display = "flex";
-                slide2.style.animation = "slideInLeft 0.9s ease-in 0s 1"
+                slide2.style.animation = "slideInLeft 0.9s ease-out 0s 1";
                 console.log("n");
                 slideOn = "slide2";
                 break;
             case "slide2":
-                slide2.style.animation = "slideOutRight 0.9s ease-in 0s 1";
+                slide2.style.animation = "slideOutRight 0.9s ease-out 0s 1";
                 slide1.style.display = "flex";
-                slide1.style.animation = "slideInLeft 0.9s ease-in 0s 1"
+                slide1.style.animation = "slideInLeft 0.9s ease-out 0s 1";
                 console.log("j");
                 slideOn = "slide1"
                 break;
@@ -223,41 +223,19 @@ nextBTN.addEventListener('click', () => {
         updateSlideContent(currentSlideID);
         switch (slideOn) {
             case "slide1":
-                slide1.style.animation = "slideOutLeft 0.9s ease-in 0s 1";
+                slide1.style.animation = "slideOutLeft 0.9s ease-out 0s 1";
                 slide2.style.display = "flex";
-                slide2.style.animation = "slideInRight 0.9s ease-in 0s 1";
+                slide2.style.animation = "slideInRight 0.9s ease-out 0s 1";
                 console.log("l");
                 slideOn = "slide2";
                 break;
             case "slide2":
-                slide2.style.animation = "slideOutLeft 0.9s ease-in 0s 1";
+                slide2.style.animation = "slideOutLeft 0.9s ease-out 0s 1";
                 slide1.style.display = "flex";
-                slide1.style.animation = "slideInRight 0.9s ease-in 0s 1";
+                slide1.style.animation = "slideInRight 0.9s ease-out 0s 1";
                 console.log("f");
                 slideOn = "slide1"
                 break;
         }
     }
-});
-
-
-
-function checkWindowSize() {
-    if (window.innerWidth < 580) {
-        elementsDisabled.style.display = "block";
-        popup.style.display = "block";
-        popupUp = true;
-    }
-    else {
-        elementsDisabled.style.display = "none";
-        popup.style.display = "none";
-    }
-}
-
-window.addEventListener("resize", checkWindowSize);
-checkWindowSize();
-
-closePromptBTN.addEventListener('click', () => {
-    popup.style.display = "none";
-    elementsDisabled.stye.display = "none";
 });

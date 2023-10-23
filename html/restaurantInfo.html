@@ -6,6 +6,7 @@
     <link rel="icon" type="image/x-icon" href="/interactive-map/images/visit-paris-website-favicon---black.png">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/navBar.css">
+    <link rel="stylesheet" href="../css/toDo.css">
     <script src="../script.js" defer></script>
     <title>To Do in Paris!</title>
 </head>
@@ -82,33 +83,35 @@
     </nav>
     <main style="height: 100%;">
         <h1 id="titleH1">Activities</h1>
-        <div style="display: flex; align-items: center; height: 100%;" class="container">
-            <button id="backButton" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);" class="activityBTN"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z"/></svg></button>
-            <div id="slide1" style="display: flex; align-items: center; justify-content: center; min-width: 80%; position: relative">
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <h3 style="text-align: left; font-size: 1.5rem;" id="parisInfoSection1"><b>1. Lorem Ipsum</b></h3> <br>
-                    <p style="margin-right: 2.5rem; margin-left: 6rem;" id="parisInfoSection1"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
-                    </p>
+        <div id="toDoContainer" class="container">
+            <button id="backButton" class="activityBTN"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z"/></svg></button>
+            <div id="slideContainer">
+                <div id="slide1">
+                    <div class="textDisplay">
+                        <h3 class="toDoh3" id="parisInfoSection1"><b>1. Lorem Ipsum</b></h3> <br>
+                        <p id="parisInfoSection1"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        </p>
+                    </div>
+                    <img class="toDoImgs" src="../images/julesVerne.jpg">
                 </div>
-                <img style="width: 49%; height: 39%; margin-right: 4rem;" src="../images/julesVerne.jpg">
-            </div>
-            <div id="slide2" style="display: none;align-items: center; justify-content: center; min-width: 80%; position: relative;">
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <h3 style="text-align: left; font-size: 1.5rem;" id="parisInfoSection1"><b>1. Lorem Ipsum</b></h3> <br>
-                    <p style="margin-right: 2.5rem; margin-left: 6rem;" id="parisInfoSection1"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
-                    </p>
+                <div id="slide2">
+                    <div class="textDisplay">
+                        <h3 class="toDoh3" id="parisInfoSection1"><b>1. Lorem Ipsum</b></h3> <br>
+                        <p id="parisInfoSection1"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        </p>
+                    </div>
+                    <img class="toDoImgs" src="../images/julesVerne.jpg">
                 </div>
-                <img style="width: 49%; height: 39%; margin-right: 4rem;" src="../images/julesVerne.jpg">
             </div>
-            <button id="nextButton" style="margin-right: 3rem" class="activityBTN"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z"/></svg></button>
+            <button id="nextButton" class="activityBTN"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z"/></svg></button>
         </div>
     </main>
 </body>

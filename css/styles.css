@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@700&family=Poppins:wght@300&family=Rosario&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Graduate&family=Passion+One:wght@700&family=Poppins:wght@300&family=Rosario&display=swap');
 
+/* all/root elements*/
+
 * {
     margin: 0;
     padding: 0;
@@ -21,6 +23,8 @@
     --font-primary: 'Graduate', serif;
     --font-secondary: 'Rosario', sans-serif;
 }
+
+/* animations */
 
 @keyframes slideInLeft {
     0% {
@@ -54,6 +58,8 @@
         transform: translateX(100%);
     }
 }
+
+/* body + webkit */
 
 body {
     background: linear-gradient(to right,var(--text-primary), var(--white-primary), var(--bg-secondary)) no-repeat fixed;
@@ -269,21 +275,6 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.activityBTN {
-    background-color: transparent;
-    outline: none;
-    border: none;
-    cursor: pointer;
-}
-.activityBTN > svg {
-    height: 4rem;
-    fill: var(--bg-secondary);
-    transition: fill 0.1s;
-}
-.activityBTN > svg:hover {
-    fill: var(--white-primary);
 }
 
 @media only screen and (max-width:600px) {
