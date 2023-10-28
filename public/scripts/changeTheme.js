@@ -1,5 +1,4 @@
-let currentTheme;
-let lastTheme;
+let currentTheme = 'f';
 let changeThemeBTN = document.querySelector("#changeTheme");
 var r = document.querySelector(":root");
 var body = document.body;
@@ -15,8 +14,8 @@ function checkTheme() {
             labels.forEach(label => {
                 label.style.color = "var(--white-primary)"
             });
-            lastTheme = currentTheme;
             currentTheme = 'l';
+            localStorage.setItem("currentTheme", currentTheme);
             console.log(currentTheme);
             break;
         case 'l':
@@ -27,8 +26,8 @@ function checkTheme() {
             labels.forEach(label => {
                 label.style.color = "var(--text-primary)";
             });
-            lastTheme = currentTheme;
             currentTheme = 'd';
+            localStorage.setItem("currentTheme", currentTheme);
             console.log(currentTheme);
             break;
         case 'd':
@@ -39,8 +38,8 @@ function checkTheme() {
             labels.forEach(label => {
                 label.style.color = "var(--white-primary)"
             });
-            lastTheme = currentTheme;
             currentTheme = 'f';
+            localStorage.setItem("currentTheme", currentTheme);
             console.log(currentTheme);
             break;
         default:
@@ -51,8 +50,8 @@ function checkTheme() {
             labels.forEach(label => {
                 label.style.color = "var(--white-primary)"
             });
-            lastTheme = 'd';
             currentTheme = 'f';
+            localStorage.setItem("currentTheme", currentTheme);
             console.log(currentTheme);
             break;
     }
@@ -61,15 +60,9 @@ function checkTheme() {
 changeThemeBTN.addEventListener('click', checkTheme);
 checkTheme();
 
-function getQueryParam(parameterName) {
-    const searchParams = new URLSearchParams(window.location.search);
-    return searchParams.get(parameterName);
-}
+document.addEventListener('DOMContentLoaded', getTheme());
 
-document.addEventListener("DOMContentLoaded", () => {
-    const theme = getQueryParam('theme');
-    if (theme != "") {
-        currentTheme = lastTheme = theme;
-        checkTheme();
-    }
-});
+function getTheme() {
+    currentTheme = localStorage.getItem("currentTheme");
+    currentTheme = localStorage.getItem("currentTheme");
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', { title: 'Activities in Paris' }) %>
+<body>
+    <%- include('../partials/nav') %>
+    <main style="height: 100%;">
+        <h1 id="titleH1">Activities</h1>
+        <div id="toDoContainer" class="container">
+            <button id="backButton" class="activityBTN"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z"/></svg></button>
+            <div id="slideContainer">
+                <div id="slide1">
+                    <div class="textDisplay">
+                        <h3 class="toDoh3" id="parisInfoSection1"><b>1. Le Jules Verne</b></h3> <br>
+                        <p id="parisInfoSection1"> Le Jules Verne, a gastronomic jewel nestled within the iconic Eiffel Tower, is a feast for the senses. As you step inside the private elevator that whisks you up to the restaurant, you're on the threshold of an unforgettable culinary adventure. Chef Frédéric Anton, with his three Michelin stars, orchestrates a symphony of flavors using the finest ingredients from across France. The dining room is adorned with large windows that provide a bird's-eye view of the city. Dining here feels akin to being suspended in the sky, the Eiffel Tower's iron lattice framing your experience. Each dish is a masterstroke, a perfect blend of tradition and innovation. Delicate foie gras, perfectly seared seafood, and decadent desserts are served with meticulous precision. And as the day transitions into night, the Eiffel Tower itself becomes a living part of your dining experience, its lights casting a warm, romantic glow over your meal.
+                        </p>
+                    </div>
+                    <img class="toDoImgs" src="/images/julesVerne.jpg">
+                </div>
+                <div id="slide2">
+                    <div class="textDisplay">
+                        <h3 class="toDoh3" id="parisInfoSection1"><b>1. Lorem Ipsum</b></h3> <br>
+                        <p id="parisInfoSection1"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis maiores vel, veniam alias sit modi necessitatibus quos quis, atque voluptas molestias. Animi debitis molestias quidem ex placeat consectetur inventore.
+                        </p>
+                    </div>
+                    <img class="toDoImgs" src="/images/julesVerne.jpg">
+                </div>
+            </div>
+            <button id="nextButton" class="activityBTN"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z"/></svg></button>
+        </div>
+    </main>
+    <script src="scripts/slides.js"></script>
+</body>
+</html>
