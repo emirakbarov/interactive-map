@@ -1,4 +1,5 @@
-let currentTheme = 'f';
+let currentTheme;
+let lastTheme;
 let changeThemeBTN = document.querySelector("#changeTheme");
 var r = document.querySelector(":root");
 var body = document.body;
@@ -14,8 +15,8 @@ function checkTheme() {
             labels.forEach(label => {
                 label.style.color = "var(--white-primary)"
             });
+            lastTheme = currentTheme;
             currentTheme = 'l';
-            localStorage.setItem("currentTheme", currentTheme);
             console.log(currentTheme);
             break;
         case 'l':
@@ -26,8 +27,8 @@ function checkTheme() {
             labels.forEach(label => {
                 label.style.color = "var(--text-primary)";
             });
+            lastTheme = currentTheme;
             currentTheme = 'd';
-            localStorage.setItem("currentTheme", currentTheme);
             console.log(currentTheme);
             break;
         case 'd':
@@ -38,8 +39,8 @@ function checkTheme() {
             labels.forEach(label => {
                 label.style.color = "var(--white-primary)"
             });
+            lastTheme = currentTheme;
             currentTheme = 'f';
-            localStorage.setItem("currentTheme", currentTheme);
             console.log(currentTheme);
             break;
         default:
@@ -50,19 +51,19 @@ function checkTheme() {
             labels.forEach(label => {
                 label.style.color = "var(--white-primary)"
             });
+            lastTheme = currentTheme;
             currentTheme = 'f';
-            localStorage.setItem("currentTheme", currentTheme);
             console.log(currentTheme);
             break;
     }
+    localStorage.setItem("currentTheme", lastTheme);
 }
 
 changeThemeBTN.addEventListener('click', checkTheme);
-checkTheme();
 
 document.addEventListener('DOMContentLoaded', getTheme());
 
 function getTheme() {
     currentTheme = localStorage.getItem("currentTheme");
-    currentTheme = localStorage.getItem("currentTheme");
+    checkTheme();
 }

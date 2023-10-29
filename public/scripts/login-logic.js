@@ -1,32 +1,49 @@
-const signupPage = document.querySelector("#signupPage");
-// const openSignup = document.querySelector("#signupBTN");
-const closeSignup = signupPage.find("closeBTN");
+const openSignup = document.querySelector("#settingsBTN");
+const openSignupFromLogin = document.querySelector(".goToSignup");
+const signupPage = document.querySelector(".signupPage");
+const closeSignup = document.querySelector(".closeSignup");
+const errorMessage = document.querySelector(".error-message");
 
-signupPage.addEventListener("animationend", (event) => {
-    if (event.animationDirection == "shrink") {
-        signupPage.style.display = "none";
-    }
+openSignup.addEventListener('click', () => {
+    signupPage.style.animation = "grow 0.1s 0s 1 forwards";
+    errorMessage.style.animation = "fadeIn 0.8s 0s 1 forwards";
+    errorMessage.style.visibility = "visible";
+    setTimeout(() => {
+        errorMessage.style.animation = "fadeOut 0.8s 0s 1 forwards";
+    }, 2000);
 });
+openSignupFromLogin.addEventListener('click', () => {
+    errorMessage.style.opacity = "0";
+    errorMessage.style.visibility = "hidden";
+    console.log(errorMessage.style.opacity);
+    signupPage.style.animation = "grow 0.1s 0s 1 forwards";
+    loginPage.style.animation = "shrink 0.1s 0s 1 forwards";
+});
+
 closeSignup.addEventListener('click', (event) => {
     event.preventDefault();
     signupPage.style.animation = "shrink 0.1s 0s 1 forwards";
+    errorMessage.style.opacity = "0";
+    errorMessage.style.visibility = "hidden";
 });
 
-const inputFields = document.querySelectorAll('.code-input input');
+const loginPage = document.querySelector(".loginPage");
+const openLoginFromSignup = document.querySelector(".goToLogin");
+const closeLogin = loginPage.querySelector(".closeLogin");
 
-const loginPage = document.querySelector("#loginPage");
-// const openLogin = docum
-const closeLogin = loginPage.find("#closeBTN");
-
-loginPage.addEventListener("animationend", (event) => {
-    if (event.animationDirection == "shrink") {
-        loginPage.style.display = "none";
-    }
+openLoginFromSignup.addEventListener('click', () => {
+    errorMessage.style.opacity = "0";
+    errorMessage.style.visibility = "hidden";
+    loginPage.style.animation = "grow 0.1s 0s 1 forwards";
+    signupPage.style.animation = "shrink 0.1s 0s 1 forwards";
 });
+
 closeLogin.addEventListener('click', (event) => {
     event.preventDefault();
     loginPage.style.animation = "shrink 0.1s 0s 1 forwards";
 });
+
+const inputFields = document.querySelectorAll('.code-input input');
 
 inputFields.forEach((input, index) => {
     input.addEventListener('input', (event) => {
