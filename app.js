@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 const app = express();
 const port = 5500;
 
-mongoose.connect('mongodb+srv://akbarovemir3:<password>@visit-paris.vuj0arg.mongodb.net/?retryWrites=true&w=majority', {
-    useNewUrlParse : true,
-    useUnifiedTopolgy : true
-});
+// mongoose.connect('mongodb+srv://akbarovemir3:zK7pIQ89F9VXyCly@visit-paris.vuj0arg.mongodb.net/?retryWrites=true&w=majority', {
+//     useNewUrlParser : true,
+//     useUnifiedTopology: true,
+//     tls: true
+// });
 
 app.set('view-engine', 'ejs');
 app.set('views', __dirname + '/html');
