@@ -188,6 +188,9 @@
     opacity: 0;
     visibility: hidden;
 }
+.success {
+    background-color: green;
+}
 .error-message > svg {
     height: 1.2rem;
     fill: var(--white-primary);

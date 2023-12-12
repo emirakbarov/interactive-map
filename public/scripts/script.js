@@ -1,24 +1,21 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const currentUrl = window.location.href;
 
-let popup = document.querySelector("#screenTooSmallPrompt");
-let elementsDisabled = document.querySelector("#disableOtherElements");
-let popupUp = false;
-let windowClosed = false;
-let closePromptBTN = document.querySelector("#closePromptBTN");
+    const urlSearchParams = new URLSearchParams(currentUrl);
 
-// const buttons = document.querySelectorAll(".nav-link");
+    const signupStatus = urlSearchParams.get('signup');
 
-// buttons.forEach(button => {
-//     button.addEventListener("click", () => {
-//         const target = button.getAttribute("target");
-//         if (target != "null") {
-//             window.location.href = `${target}?theme=${lastTheme}`;
-//             console.log("hello");
-//         }
-//         else {
-//             if (button.id == "signupBTN") {
-                
-//             }
-//             else if (button.id == "goToLogin"
-//         }
-//     });
-// });
+    if (signupStatus == 'true' && messageSent == false) {
+        localStorage.setItem("logged", true);
+        if (localStorage.getItem("logged") == true && localStorage.getItem("sentMessage") == false) {
+            const successDiv = document.createElement('div');
+
+            successDiv.className = 'error-message success';
+
+            successDiv.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>You have successfully logged in!';
+
+            document.body.appendChild(successDiv);
+        }
+        localStorage.setItem("sentMessage", true);
+    }
+});
