@@ -9,7 +9,7 @@ const port = 3000;
 connectDB();
 
 app.use(express.urlencoded({extended: true}));
-// app.use(express.json);
+app.use(express.json());
 app.set('view-engine', 'ejs');
 app.set('views', __dirname + '/html');
 app.use(express.static('public'));
@@ -63,6 +63,6 @@ async function connectDB() {
             useNewUrlParser:true
         });
     } catch(err) {
-        console.error(err);
+        console.log(err);
     }
 }

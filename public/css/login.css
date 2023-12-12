@@ -32,6 +32,19 @@
         visibility: hidden;
     }
 }
+@keyframes successFade {
+    0% {
+        opacity: 0;
+        visibility: visible;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
 
 .loginForms {
     width: 38rem;
@@ -188,8 +201,13 @@
     opacity: 0;
     visibility: hidden;
 }
-.success {
+#success {
     background-color: green;
+    opacity: 0;
+    visibility: hidden;
+    top: 40%;
+    left: 50%;
+    translate: -50% -50%;
 }
 .error-message > svg {
     height: 1.2rem;
