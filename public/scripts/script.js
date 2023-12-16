@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     if (getQueryParams('signup') == 'success') {
         console.log('start');
         localStorage.setItem('logged', true);
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.body.appendChild(successDiv);
         console.log('faded');
-        const successPrompt = document.getElementById('success');
+        const successPrompt = document.getElementById('succes-signup');
         successPrompt.style.animation = "successFade 4s 1 forwards";
     } else {
         console.log('no');

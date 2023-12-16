@@ -1,12 +1,12 @@
-<form class="loginForms loginPage">
+<form action="/login" method="POST" class="loginForms loginPage">
     <h1 class="labels">Log In</h1>
     <div class="labelFormPair">
         <label class="labels" for="email">Email:</label>
-        <input class="email" type="email" required>
+        <input name="email" class="email" type="email" required>
     </div>
     <div class="labelFormPair">
         <label class="labels" for="password">Password:</label>
-        <input class="password" type="password" required>
+        <input name="password" class="password" type="password" required>
     </div>
     <button class="buttons submit" type="submit">Verify email</button>
     <button class="buttons closeLogin">Close</button>
@@ -14,12 +14,12 @@
     <div class="verification-container">
         <h4 class="labels">Enter the 6 digit code sent to your email</h3>
         <div class="code-input">
-            <input type="text" maxlength="1" pattern="[0-9]" title="Please enter a single digit" required readonly>
-            <input type="text" maxlength="1" pattern="[0-9]" title="Please enter a single digit" required readonly>
-            <input type="text" maxlength="1" pattern="[0-9]" title="Please enter a single digit" required readonly>
-            <input type="text" maxlength="1" pattern="[0-9]" title="Please enter a single digit" required readonly>
-            <input type="text" maxlength="1" pattern="[0-9]" title="Please enter a single digit" required readonly>
-            <input type="text" maxlength="1" pattern="[0-9]" title="Please enter a single digit" required readonly>
+            <input class="code" type="text" maxlength="1" pattern="[0-9]" title="Please enter a single digit" name="code" required readonly>
+            <input class="code" type="text" maxlength="1" pattern="[0-9]" title="Please enter a single digit" name="code" required readonly>
+            <input class="code" type="text" maxlength="1" pattern="[0-9]" title="Please enter a single digit" name="code" required readonly>
+            <input class="code" type="text" maxlength="1" pattern="[0-9]" title="Please enter a single digit" name="code" required readonly>
+            <input class="code" type="text" maxlength="1" pattern="[0-9]" title="Please enter a single digit" name="code" required readonly>
+            <input class="code" type="text" maxlength="1" pattern="[0-9]" title="Please enter a single digit" name="code" required readonly>
         </div>
     </div>
 </form>

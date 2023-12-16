@@ -2,14 +2,16 @@ const express = require('express');
 require('dotenv').config();
 const User = require('./user.js');
 const mongoose = require('mongoose');
+const bp = require('body-parser');
+const nodemailer = require('nodemailer');;
 
 const app = express();
 const port = 3000;
 
 connectDB();
 
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+app.use(bp.urlencoded({ extended: false }));
+app.use(bp.json());
 app.set('view-engine', 'ejs');
 app.set('views', __dirname + '/html');
 app.use(express.static('public'));
@@ -28,7 +30,7 @@ app.post('/register', async (req, res) => {
     const surname = req.body.surname;
     const email = req.body.email;
     const password = req.body.password;
-    let signup = 'fail';
+    let signup;
 
     try {
         const newUser = new User({email, password, firstName, surname });
@@ -45,6 +47,63 @@ app.post('/register', async (req, res) => {
     }
     const referer = req.headers.referer || '/';   
     res.redirect(`${referer}?signup=${signup}`);
+});
+app.post('/login', async (req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+    checkForUser(email, password);
+
+    async function checkForUser(email, password) {
+        console.log('in function');
+        const user = await User.findOne({ 'email' : email, 'password' : password });
+        const referer = req.headers.referer || '/';
+        let logged;
+        if (user) {
+            //const verificationContainer = document.getElementById("verification-container");
+            //const code = document.querySelectorAll(".code");
+            //verificationContainer.style.backgroundColor = "transparent";
+            // code.forEach(code => { code.readOnlu = false});
+            // console.log('success');
+            verifyUser();
+        }
+        else {
+            logged = 'failed';
+            console.log('login unsuccessful');
+        }
+        res.redirect(`${referer}?logged=${logged}`);
+    }
+    function verifyUser(email) {
+        // const rawCode = req.body.code;
+        // console.log(rawCode);
+        // const code = rawCode.join('');
+        let sentCode ='';
+        for (let i=0; i <6; i++) {
+            let number = Math.floor(Math.random() * 10);
+            sentCode += number;
+        }
+        console.log(sentCode);
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'ecode3456@gmail.com',
+              pass: 'EmirCode33'
+            }
+        });
+          
+        let mailOptions = {
+            from: 'ecode3456@gmail.com',
+            to: email,
+            subject: 'Code - Visit Paris',
+            text: 'Your code is: ' + sentCode
+        };
+        transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+        });
+    }
 });
 app.use((req, res) => {
     res.status(404).send('404 Not Found');

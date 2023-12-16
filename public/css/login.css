@@ -201,7 +201,7 @@
     opacity: 0;
     visibility: hidden;
 }
-#success {
+.success {
     background-color: green;
     opacity: 0;
     visibility: hidden;
