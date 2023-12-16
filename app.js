@@ -4,9 +4,28 @@ const User = require('./user.js');
 const mongoose = require('mongoose');
 const bp = require('body-parser');
 const nodemailer = require('nodemailer');;
+const { google } = require('googleapis');
 
 const app = express();
 const port = 3000;
+
+	
+const oauth2Client = new google.auth.OAuth2(
+    process.env.GMAIL_OAUTH_CLIENT_ID,
+    process.env.GMAIL_OAUTH_CLIENT_SECRET,
+    process.env.GMAIL_OAUTH_REDIRECT_URL,
+);
+const GMAIL_SCOPES = [
+    'https://mail.google.com/',
+    'https://www.googleapis.com/auth/gmail.modify',
+    'https://www.googleapis.com/auth/gmail.compose',
+    'https://www.googleapis.com/auth/gmail.send',
+];
+const url = oauth2Client.generateAuthUrl({
+    access_type: 'offline',
+    scope: GMAIL_SCOPES,
+});
+console.info(`authUrl: ${url}`);
 
 connectDB();
 
@@ -83,10 +102,16 @@ app.post('/login', async (req, res) => {
         }
         console.log(sentCode);
         let transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: 'smtp-mail.outlook.com',
+            port: 587,
             auth: {
-              user: 'ecode3456@gmail.com',
-              pass: 'EmirCode33'
+                user: process.env.USER,
+                pass: process.env.PASS
+            },
+            secure: false,
+            secureConnection: false,
+            tls: {
+                ciphers: 'SSLv3'
             }
         });
           
