@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    if (getQueryParams('signup') == 'success') {
-        console.log('start');
+    if(getQueryParams('logged') == 'success') {
         localStorage.setItem('logged', true);
-        console.log('signup');
-        console.log('up to message');
+    }
+    if (getQueryParams('signup') == 'success') {
         const successDiv = document.createElement('div');
 
         successDiv.className = 'error-message success';

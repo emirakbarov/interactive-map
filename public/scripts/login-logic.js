@@ -2,27 +2,49 @@ const openSignup = document.querySelector("#settingsBTN");
 const openSignupFromLogin = document.querySelector(".goToSignup");
 const signupPage = document.querySelector(".signupPage");
 const closeSignup = document.querySelector(".closeSignup");
-const errorMessage = document.querySelector(".error-message");
+const errorMessage = document.querySelector(".fail");
+const closeSettings = document.querySelector(".closeSettings");
+const settingsPage = document.querySelector(".settingsPage");
+let signupOpen = false;
+let loginOpen = false;
+let settingsOpen = false;
 
 openSignup.addEventListener('click', () => {
-    signupPage.style.animation = "grow 0.1s 0s 1 forwards";
-    errorMessage.style.animation = "fadeIn 0.8s 0s 1 forwards";
-    errorMessage.style.visibility = "visible";
-    setTimeout(() => {
-        errorMessage.style.animation = "fadeOut 0.8s 0s 1 forwards";
-    }, 2000);
+    console.log(localStorage.getItem('logged'));
+    if (localStorage.getItem('logged') == 'true') {
+        openSettingsFunc();
+        closeSignupFunc() 
+        closeLoginFunc();
+    } else {
+        console.log('before func');
+        openSignupFunc();
+        console.log('after func');
+        closeSettingsFunc();
+        closeLoginFunc();
+        errorMessage.style.animation = "fadeIn 0.8s 0s 1 forwards";
+        errorMessage.style.visibility = "visible";
+        setTimeout(() => {
+            errorMessage.style.animation = "fadeOut 0.8s 0s 1 forwards";
+        }, 2000);
+    }
 });
+
+closeSettings.addEventListener('click', (event) => {
+    event.preventDefault();
+    closeSettingsFunc();
+});
+
 openSignupFromLogin.addEventListener('click', () => {
     errorMessage.style.opacity = "0";
     errorMessage.style.visibility = "hidden";
     console.log(errorMessage.style.opacity);
-    signupPage.style.animation = "grow 0.1s 0s 1 forwards";
-    loginPage.style.animation = "shrink 0.1s 0s 1 forwards";
+    openSignupFunc();
+    closeLoginFunc();
 });
 
 closeSignup.addEventListener('click', (event) => {
     event.preventDefault();
-    signupPage.style.animation = "shrink 0.1s 0s 1 forwards";
+    closeSignupFunc();
     errorMessage.style.opacity = "0";
     errorMessage.style.visibility = "hidden";
 });
@@ -34,25 +56,48 @@ const closeLogin = loginPage.querySelector(".closeLogin");
 openLoginFromSignup.addEventListener('click', () => {
     errorMessage.style.opacity = "0";
     errorMessage.style.visibility = "hidden";
-    loginPage.style.animation = "grow 0.1s 0s 1 forwards";
-    signupPage.style.animation = "shrink 0.1s 0s 1 forwards";
+    openLogin();
+    closeSignupFunc();
 });
 
 closeLogin.addEventListener('click', (event) => {
     event.preventDefault();
-    loginPage.style.animation = "shrink 0.1s 0s 1 forwards";
+    closeLoginFunc();
 });
 
-const inputFields = document.querySelectorAll('.code-input input');
-
-inputFields.forEach((input, index) => {
-    input.addEventListener('input', (event) => {
-        if (/^\d$/.test(event.target.value)) {
-            if (index < inputFields.length - 1) {
-                inputFields[index + 1].focus();
-            }
-        } else if (event.target.value === '' && index > 0) {
-            inputFields[index - 1].focus();
-        }
-    });
-});
+function closeLoginFunc() {
+    if (loginOpen == true) {
+        loginPage.style.animation = "shrink 0.1s 0s 1 forwards";
+        loginOpen = false;
+    }
+}
+function openLogin() {
+    if (loginOpen == false) {
+        loginPage.style.animation = "grow 0.1s 0s 1 forwards";
+        loginOpen = true;
+    }
+}
+function closeSettingsFunc() {
+    if (settingsOpen == true) {
+        settingsPage.style.animation = "shrink 0.1s 0s 1 forwards";
+        settingsOpen = false;
+    }
+}
+function openSettingsFunc() {
+    if (settingsOpen == false) {
+        settingsPage.style.animation = "grow 0.1s 0s 1 forwards";
+        settingsOpen = true;
+    }
+}
+function closeSignupFunc() {
+    if (signupOpen == true) {
+        signupPage.style.animation = "shrink 0.1s 0s 1 forwards";
+        signupOpen = false;
+    }
+}
+function openSignupFunc() {
+    if (signupOpen == false) {
+        signupPage.style.animation = "grow 0.1s 0s 1 forwards";
+        signupOpen = true;
+    }
+}

@@ -4,28 +4,9 @@ const User = require('./user.js');
 const mongoose = require('mongoose');
 const bp = require('body-parser');
 const nodemailer = require('nodemailer');;
-const { google } = require('googleapis');
 
 const app = express();
 const port = 3000;
-
-	
-const oauth2Client = new google.auth.OAuth2(
-    process.env.GMAIL_OAUTH_CLIENT_ID,
-    process.env.GMAIL_OAUTH_CLIENT_SECRET,
-    process.env.GMAIL_OAUTH_REDIRECT_URL,
-);
-const GMAIL_SCOPES = [
-    'https://mail.google.com/',
-    'https://www.googleapis.com/auth/gmail.modify',
-    'https://www.googleapis.com/auth/gmail.compose',
-    'https://www.googleapis.com/auth/gmail.send',
-];
-const url = oauth2Client.generateAuthUrl({
-    access_type: 'offline',
-    scope: GMAIL_SCOPES,
-});
-console.info(`authUrl: ${url}`);
 
 connectDB();
 
@@ -74,60 +55,17 @@ app.post('/login', async (req, res) => {
 
     async function checkForUser(email, password) {
         console.log('in function');
-        const user = await User.findOne({ 'email' : email, 'password' : password });
+        const user = await User.findOne({ 'email': email, 'password': password });
         const referer = req.headers.referer || '/';
+    
         let logged;
         if (user) {
-            //const verificationContainer = document.getElementById("verification-container");
-            //const code = document.querySelectorAll(".code");
-            //verificationContainer.style.backgroundColor = "transparent";
-            // code.forEach(code => { code.readOnlu = false});
-            // console.log('success');
-            verifyUser();
-        }
-        else {
+            logged = 'success';
+        } else {
             logged = 'failed';
             console.log('login unsuccessful');
         }
         res.redirect(`${referer}?logged=${logged}`);
-    }
-    function verifyUser(email) {
-        // const rawCode = req.body.code;
-        // console.log(rawCode);
-        // const code = rawCode.join('');
-        let sentCode ='';
-        for (let i=0; i <6; i++) {
-            let number = Math.floor(Math.random() * 10);
-            sentCode += number;
-        }
-        console.log(sentCode);
-        let transporter = nodemailer.createTransport({
-            host: 'smtp-mail.outlook.com',
-            port: 587,
-            auth: {
-                user: process.env.USER,
-                pass: process.env.PASS
-            },
-            secure: false,
-            secureConnection: false,
-            tls: {
-                ciphers: 'SSLv3'
-            }
-        });
-          
-        let mailOptions = {
-            from: 'ecode3456@gmail.com',
-            to: email,
-            subject: 'Code - Visit Paris',
-            text: 'Your code is: ' + sentCode
-        };
-        transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-              console.log(error);
-            } else {
-              console.log('Email sent: ' + info.response);
-            }
-        });
     }
 });
 app.use((req, res) => {
