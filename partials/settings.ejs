@@ -1,4 +1,4 @@
-<form class="loginForms settingsPage">
+<form action="/update" method="POST" class="loginForms settingsPage">
     <h1 class="labels">Settings</h1>
     <div class="labelFormPair">
         <label class="labels" for="firstName">First Name:</label>
@@ -17,6 +17,6 @@
         <input name="password" class="password" type="password">
     </div>
     <button class="buttons viewPassword">View password</button>
-    <button class="buttons logOut">Log out</button>
+    <button class="buttons logOut" type="submit">Log out</button>
     <button class="buttons closeSettings">Close</button>
 </form>

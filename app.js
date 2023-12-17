@@ -3,7 +3,8 @@ require('dotenv').config();
 const User = require('./user.js');
 const mongoose = require('mongoose');
 const bp = require('body-parser');
-const nodemailer = require('nodemailer');;
+
+let token;
 
 const app = express();
 const port = 3000;
@@ -30,13 +31,12 @@ app.post('/register', async (req, res) => {
     const surname = req.body.surname;
     const email = req.body.email;
     const password = req.body.password;
-    let signup;
 
     try {
         const newUser = new User({email, password, firstName, surname });
     
         await newUser.save();
-    
+        token = newUser._id;
         console.log('signup successful');
         
         signup = 'success';
@@ -47,6 +47,10 @@ app.post('/register', async (req, res) => {
     }
     const referer = req.headers.referer || '/';   
     res.redirect(`${referer}?signup=${signup}`);
+
+    function randomString() {
+        return (Math.random() * 1000000).toString(36).replace('.', '');
+    }
 });
 app.post('/login', async (req, res) => {
     const email = req.body.email;
@@ -67,6 +71,14 @@ app.post('/login', async (req, res) => {
         }
         res.redirect(`${referer}?logged=${logged}`);
     }
+});
+app.post('/update', async (req, res) => {
+    const filter = { '_id': token };
+    const update = { 'email': req.body.email, 'password': req.body.password, 'firstName': req.body.firstName, 'surname': req.body.surname };
+
+    console.log(filter);
+    const user = await User.findOneAndUpdate(filter, update);
+    console.log('success');
 });
 app.use((req, res) => {
     res.status(404).send('404 Not Found');
