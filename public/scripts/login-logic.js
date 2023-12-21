@@ -5,9 +5,17 @@ const closeSignup = document.querySelector(".closeSignup");
 const errorMessage = document.querySelector(".fail");
 const closeSettings = document.querySelector(".closeSettings");
 const settingsPage = document.querySelector(".settingsPage");
+const logOut = document.querySelector('.logOut');
+const logOutSuccess = document.getElementById('sucess-logout');
 let signupOpen = false;
 let loginOpen = false;
 let settingsOpen = false;
+
+logOut.addEventListener('click', () => {
+    localStorage.setItem('logged', false);
+    closeSettingsFunc();
+    logOutSuccess.style.animation = "successFade 4s 1 forwards";
+});
 
 openSignup.addEventListener('click', () => {
     console.log(localStorage.getItem('logged'));
@@ -16,16 +24,10 @@ openSignup.addEventListener('click', () => {
         closeSignupFunc() 
         closeLoginFunc();
     } else {
-        console.log('before func');
         openSignupFunc();
-        console.log('after func');
         closeSettingsFunc();
         closeLoginFunc();
-        errorMessage.style.animation = "fadeIn 0.8s 0s 1 forwards";
-        errorMessage.style.visibility = "visible";
-        setTimeout(() => {
-            errorMessage.style.animation = "fadeOut 0.8s 0s 1 forwards";
-        }, 2000);
+        errorMessage.style.animation = "successFade 4s forwards";
     }
 });
 

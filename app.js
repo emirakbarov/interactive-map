@@ -36,7 +36,6 @@ app.post('/register', async (req, res) => {
         const newUser = new User({email, password, firstName, surname });
     
         await newUser.save();
-        token = newUser._id;
         console.log('signup successful');
         
         signup = 'success';
@@ -73,13 +72,14 @@ app.post('/login', async (req, res) => {
     }
 });
 app.post('/update', async (req, res) => {
-    const filter = { '_id': token };
+    const filter = { 'token': token };
     const update = { 'email': req.body.email, 'password': req.body.password, 'firstName': req.body.firstName, 'surname': req.body.surname };
 
     console.log(filter);
     const user = await User.findOneAndUpdate(filter, update);
     console.log('success');
 });
+
 app.use((req, res) => {
     res.status(404).send('404 Not Found');
 });
@@ -99,4 +99,8 @@ async function connectDB() {
     } catch(err) {
         console.log(err);
     }
+}
+
+async function assignSession(email, password) {
+    await 
 }

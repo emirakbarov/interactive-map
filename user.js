@@ -19,6 +19,11 @@ const userSchema = new Schema({
   surname: {
     type: String,
     required: true
+  },
+  token: {
+    type: String,
+    required: true,
+    unique: true
   }
 });
 
