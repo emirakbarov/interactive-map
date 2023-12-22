@@ -112,6 +112,9 @@
     .nav-link:focus {
         background-color: var(--white-primary);
     }
+    main {
+        margin-bottom: 4rem;
+    }
 }
 /* large screen */
 @media only screen and (min-width: 600px) {
