@@ -18,12 +18,12 @@ const userSchema = new Schema({
   surname: {
     type: String,
     required: true
-  }//,
-  // token: {
-  //   type: String,
-  //   required: true,
-  //   unique: true
-  // }
+  },
+  token: {
+    type: String, 
+    unique: true,
+    requried: true
+  }
 });
 
 const User = mongoose.model('User', userSchema);

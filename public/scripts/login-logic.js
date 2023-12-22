@@ -12,7 +12,7 @@ let loginOpen = false;
 let settingsOpen = false;
 
 logOut.addEventListener('click', () => {
-    localStorage.setItem('logged', false);
+    localStorage.setItem('logged', 'false');
     closeSettingsFunc();
     logOutSuccess.style.animation = "successFade 4s 1 forwards";
 });
