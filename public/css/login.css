@@ -226,3 +226,9 @@
 .signupPage > h1 {
     margin-bottom: 1rem;
 }
+
+@media only screen and (max-width:816px) {
+    :root {
+        font-size: 12px;
+    }
+}

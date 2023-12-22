@@ -283,3 +283,18 @@ img {
         transition: none;
     }
 }
+@media only screen and (max-width:845px) {
+    #interactiveMap {
+        width: 392px;
+        height: 582px;
+    }
+}
+@media only screen and (max-width:600px) {
+    main {
+        margin-bottom: 4rem;
+    }
+    #interactiveMap {
+        width: 392px;
+        height: 450px;
+    }
+}

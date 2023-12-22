@@ -3,6 +3,9 @@
     -webkit-transform: scaleX(-1); 
     transform: scaleX(-1);
 }
+#nextButton {
+    margin-right: 1.3rem;
+}
 
 .activityBTN {
     background-color: transparent;
@@ -57,22 +60,36 @@
     height: 39%;
 }
 
-#slide1 {
+#slide1, #slide2 {
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 80%;
     position: absolute;
-    padding-right: 2rem;
     padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 #slide2 {
     display: none; 
-    align-items: center; 
-    justify-content: center; 
-    min-width: 80%;
-    position: absolute;
-    padding-left: 2rem;
-    padding-right: 2rem;
+}
+
+@media only screen and (max-width:1070px) {
+    #slide1, #slide2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 80%;
+        position: absolute;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 1rem;
+    }
+    #slide2 {
+        display: none;
+    }
+    .toDoImgs {
+        padding-top: 2rem;
+    }
 }
