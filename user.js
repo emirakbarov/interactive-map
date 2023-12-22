@@ -9,7 +9,6 @@ const userSchema = new Schema({
   },
   password: {
     type: String,
-    unique: true,
     required: true
   },
   firstName: {
@@ -19,12 +18,12 @@ const userSchema = new Schema({
   surname: {
     type: String,
     required: true
-  },
-  token: {
-    type: String,
-    required: true,
-    unique: true
-  }
+  }//,
+  // token: {
+  //   type: String,
+  //   required: true,
+  //   unique: true
+  // }
 });
 
 const User = mongoose.model('User', userSchema);

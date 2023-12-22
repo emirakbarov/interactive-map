@@ -4,8 +4,6 @@ const User = require('./user.js');
 const mongoose = require('mongoose');
 const bp = require('body-parser');
 
-let token;
-
 const app = express();
 const port = 3000;
 
@@ -71,14 +69,14 @@ app.post('/login', async (req, res) => {
         res.redirect(`${referer}?logged=${logged}`);
     }
 });
-app.post('/update', async (req, res) => {
-    const filter = { 'token': token };
-    const update = { 'email': req.body.email, 'password': req.body.password, 'firstName': req.body.firstName, 'surname': req.body.surname };
+// app.post('/update', async (req, res) => {
+//     const filter = { 'token': token };
+//     const update = { 'email': req.body.email, 'password': req.body.password, 'firstName': req.body.firstName, 'surname': req.body.surname };
 
-    console.log(filter);
-    const user = await User.findOneAndUpdate(filter, update);
-    console.log('success');
-});
+//     console.log(filter);
+//     const user = await User.findOneAndUpdate(filter, update);
+//     console.log('success');
+// });
 
 app.use((req, res) => {
     res.status(404).send('404 Not Found');
@@ -101,6 +99,6 @@ async function connectDB() {
     }
 }
 
-async function assignSession(email, password) {
-    await 
-}
+// async function assignSession(email, password) {
+//     await 
+// }
