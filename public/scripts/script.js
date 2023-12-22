@@ -1,33 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.settingsPage').addEventListener('submit', sendData);
     if(getQueryParams('logged') == 'success') {
         loggedIn();
+    } else if (getQueryParams('logged') == 'failed'){
+        document.getElementById('failed-login').style.animation = "successFade 4s 1 forwards";
+        console.log('thus far');
     }
     if (getQueryParams('signup') == 'success') {
         signedUp();
-    } else {
-        console.log('no');
+    } else if (getQueryParams('signup') == 'failed') {
+        document.getElementById('failed-signup').style.animation = "successFade 4s 1 forwards";
+        console.log('thus far 2');
     }
 
     function signedUp() {
-        const signupSuccess = document.querySelector('.success-signup');
+        const signupSuccess = document.getElementById('success-signup');
         signupSuccess.style.animation = "successFade 4s 1 forwards";
     }
     function loggedIn() {
-        console.log('this bit ran');
-        localStorage.setItem('logged', 'true');
+        localStorage.setItem('logged', true);
         localStorage.setItem('session', getTokenFromUrl());
-        const loginSuccess = document.querySelector('.success-login');
+        const loginSuccess = document.getElementById('success-login');
         loginSuccess.style.animation = "successFade 4s 1 forwards";
-        console.log('logged was success');
     }
     function sendData(event) {
         event.preventDefault();
-        const dataToSend = localStorage.getItem('session');
+        const dataToSend = localStorage.getItem('session');    
+        const formData = new FormData(event.target);
+        formData.append('data', dataToSend);
 
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', '/saveData', true);
+        xhr.open('POST', '/update', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify({ data: dataToSend }));
+        xhr.send(JSON.stringify(Object.fromEntries(formData)));
     }
     
     function getTokenFromUrl() {

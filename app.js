@@ -30,12 +30,6 @@ app.get('/interactiveMap', (req, res) => {
     res.render('interactiveMap.ejs');
 });
 
-app.post('/saveData', (req, res) => {
-    recievedData = req.body.data;
-    token = recievedData;
-    res.redirect('/update');
-});
-
 app.post('/register', async (req, res) => {
     const firstName = req.body.firstName;
     const surname = req.body.surname;
@@ -52,9 +46,8 @@ app.post('/register', async (req, res) => {
         
         signup = 'success';
     } catch (err) {
-        console.error(err);
+        console.log(err);
         signup = 'failed';
-        res.status(500).send('Internal Server Error');
     }
     const referer = req.headers.referer || '/';   
     res.redirect(`${referer}?signup=${signup}&sessionID=${token}`);
@@ -65,7 +58,6 @@ app.post('/login', async (req, res) => {
     checkForUser(email, password);
 
     async function checkForUser(email, password) {
-        console.log('in function');
         const user = await User.findOne({ 'email': email, 'password': password });
         const referer = req.headers.referer || '/';
         let logged;
@@ -80,12 +72,26 @@ app.post('/login', async (req, res) => {
     }
 });
 app.post('/update', async (req, res) => {
-    const filter = { 'token': token };
-    const update = { 'email': req.body.email, 'password': req.body.password, 'firstName': req.body.firstName, 'surname': req.body.surname };
+    console.log('got to update');
+    const receivedData = req.body.data;
+    token = receivedData;
 
-    console.log(filter);
-    const user = await User.findOneAndUpdate(filter, update);
-    console.log('success');
+    const filter = { 'token': token };
+    const update = {
+        'email': req.body.email,
+        'password': req.body.password,
+        'firstName': req.body.firstName,
+        'surname': req.body.surname,  
+     };
+
+    try {
+        const user = await User.findOneAndUpdate(filter, update);
+        console.log('success');
+        res.send('Update successful');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
 app.use((req, res) => {
@@ -108,7 +114,3 @@ async function connectDB() {
         console.log(err);
     }
 }
-
-// async function assignSession(email, password) {
-//     await 
-// }

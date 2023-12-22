@@ -2,17 +2,18 @@ const openSignup = document.querySelector("#settingsBTN");
 const openSignupFromLogin = document.querySelector(".goToSignup");
 const signupPage = document.querySelector(".signupPage");
 const closeSignup = document.querySelector(".closeSignup");
-const errorMessage = document.querySelector(".fail");
+const errorMessage = document.querySelector("#fail");
 const closeSettings = document.querySelector(".closeSettings");
 const settingsPage = document.querySelector(".settingsPage");
 const logOut = document.querySelector('.logOut');
-const logOutSuccess = document.getElementById('sucess-logout');
+const logOutSuccess = document.getElementById('success-logout');
 let signupOpen = false;
 let loginOpen = false;
 let settingsOpen = false;
 
-logOut.addEventListener('click', () => {
-    localStorage.setItem('logged', 'false');
+logOut.addEventListener('click', (event) => {
+    event.preventDefault();
+    localStorage.setItem('logged', false);
     closeSettingsFunc();
     logOutSuccess.style.animation = "successFade 4s 1 forwards";
 });

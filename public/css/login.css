@@ -209,6 +209,14 @@
     left: 50%;
     translate: -50% -50%;
 }
+.fail {
+    background-color: red;
+    opacity: 0;
+    visibility: hidden;
+    top: 40%;
+    left: 50%;
+    translate: -50% -50%;
+}
 .error-message > svg {
     height: 1.2rem;
     fill: var(--white-primary);
@@ -217,8 +225,4 @@
 }
 .signupPage > h1 {
     margin-bottom: 1rem;
-}
-/* settings stylings */
-
-.settingsPage {
 }
